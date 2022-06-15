@@ -46,6 +46,6 @@ while True:
 
         sweeper.start()
 
-        window["-OUTPUT-"].update("Done ! check {} for the server found".format(filePath))
+        window["-OUTPUT-"].update("Done ! check {} for the servers found".format(filePath))
 
 window.close()
