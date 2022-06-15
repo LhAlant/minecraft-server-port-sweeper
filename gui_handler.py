@@ -9,6 +9,7 @@ layout = [
     [sg.Text("Number of ports to check :", expand_x=True), sg.In(key="-NUMBER_OF_PORTS-")],
     [sg.Text("Number of threads to use :", expand_x=True), sg.In(key="-NUMBER_OF_THREADS-")],
     [sg.Text("Name of the file to export data to : ", expand_x=True), sg.In("servers.txt", key="-FILE_PATH-")],
+    [sg.Text("Folder to save the file to : "), sg.Push(), sg.FolderBrowse(key="-FOLDER-")],
     [sg.Button("Start!", key="-START_SWEEPER-"), sg.Text("", expand_x=True, key="-OUTPUT-")]
     ]
 
@@ -28,7 +29,7 @@ while True:
             continue
 
         ip = values["-IP-"]
-        filePath = values["-FILE_PATH-"]
+        filePath = "{}//{}".format(values["-FOLDER-"], values["-FILE_PATH-"])
         if ".txt" not in filePath:
             filePath += ".txt"
 
